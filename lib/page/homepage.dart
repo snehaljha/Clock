@@ -17,20 +17,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if(Provider.of<PageProvider>(context).getPage().pageType == PageType.alarm)
-          const AlarmPage(),
-        if(Provider.of<PageProvider>(context).getPage().pageType != PageType.alarm)
-          const ClockPage(),
-        const Expanded(child: SizedBox(height: 10)),
-        const Divider(
-          color: Color(0xffeaecff),
-          thickness: 1,
-        ),
-        const FootRow(),
-      ],
-    );
+
+    if(Provider.of<PageProvider>(context).getPage().pageType == PageType.alarm) {
+      return const AlarmPage();
+    }
+    return const ClockPage();
   }
 }

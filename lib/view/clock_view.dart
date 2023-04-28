@@ -12,9 +12,10 @@ class ClockView extends StatefulWidget {
 
 class _ClockViewState extends State<ClockView> {
 
+  Timer? _timer;
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 1), (timer) => setState(() {}));
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) => setState(() {}));
 
     super.initState();
   }
@@ -34,6 +35,12 @@ class _ClockViewState extends State<ClockView> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 }
 

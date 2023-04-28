@@ -19,12 +19,13 @@ class _DigitalClockViewState extends State<DigitalClockView> {
 
   final bool showDate;
   var now = DateTime.now();
+  Timer? _timer;
 
   _DigitalClockViewState(bool this.showDate);
 
   @override
   void initState() {
-    Timer.periodic(Duration(seconds: 1), (timer) => setState(() {now = DateTime.now();}));
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) => setState(() {now = DateTime.now();}));
     super.initState();
   }
 
@@ -46,5 +47,11 @@ class _DigitalClockViewState extends State<DigitalClockView> {
               ),
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 }

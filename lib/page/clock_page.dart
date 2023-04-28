@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_clock/view/clock_view.dart';
 import 'package:simple_clock/view/digital_clock_view.dart';
+import 'package:simple_clock/view/foot_row_view.dart';
 import 'package:simple_clock/view/timezone_view.dart';
 
 class ClockPage extends StatefulWidget {
@@ -27,7 +28,13 @@ class _ClockPageState extends State<ClockPage> {
           'Timezone',
           style: TextStyle(color: Color(0xffeaecff), fontSize: 24),
         ),
-        TimezoneView()
+        TimezoneView(),
+        Expanded(child: SizedBox(height: 10)),
+        Divider(
+          color: Color(0xffeaecff),
+          thickness: 1,
+        ),
+        FootRow(),
       ]
     );
   }
