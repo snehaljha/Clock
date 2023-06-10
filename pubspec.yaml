@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.18.1
   provider: ^6.0.5
   dotted_border: ^2.0.0+3
+  numberpicker: ^2.1.2
 
 dev_dependencies:
   flutter_test:

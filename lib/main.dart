@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Container(
-          color: const Color(0xff2d2f41),
+          color: const Color(0xff0B2447),
           padding: const EdgeInsets.all(32),
           child: ChangeNotifierProvider (
             create: (context) => PageProvider(),
